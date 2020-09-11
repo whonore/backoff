@@ -13,12 +13,11 @@ def expo(base=2, factor=1, max_value=None):
              true exponential sequence exceeds this, the value
              of max_value will forever after be yielded.
     """
-    n = 0
+    a = 1
     while True:
-        a = factor * base ** n
         if max_value is None or a < max_value:
-            yield a
-            n += 1
+            yield factor * a
+            a *= base
         else:
             yield max_value
 
